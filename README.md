@@ -1,0 +1,1 @@
+# lendsqr-fp-news
