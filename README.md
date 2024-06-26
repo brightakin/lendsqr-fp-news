@@ -1,4 +1,6 @@
 Created the GitHub Repository
+
+
 Repository Creation: Created a GitHub repository named lendsqr-fp-news.
 Clone Repository: Cloned the repository to my local machine.
 Initialize React Native Project:
@@ -6,6 +8,8 @@ Open terminal
 Copy code
 npx react-native init lendsqr --template react-native-template-typescript
 Install the required dependencies:
+
+
 npm install @react-navigation/native @react-navigation/stack @react-navigation/bottom-tabs redux react-redux @reduxjs/toolkit axios firebase react-native-firebase/app react-native-firebase/auth react-native-firebase/crashlytics react-native-firebase/perf react-native-firebase/remote-config react-native-firebase/messaging react-native-code-push
 
 
@@ -13,8 +17,8 @@ Created Firebase Project: Create a Firebase project named lendsqr-fp-news.
 
 Add Firebase to Project:
 
-Download the google-services.json file and place it in the android/app directory.
-Download the GoogleService-Info.plist file and add it to the iOS project in Xcode.
+Downloaded the google-services.json file and place it in the android/app directory.
+Downloaded the GoogleService-Info.plist file and add it to the iOS project in Xcode.
 Added dependencies to the native applications(android and ios)
 Firebase Services Setup:
 
