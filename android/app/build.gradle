@@ -1,7 +1,14 @@
 apply plugin: "com.android.application"
 apply plugin: "org.jetbrains.kotlin.android"
 apply plugin: "com.facebook.react"
+apply plugin: "com.google.gms.google-services"
+apply from: "../../node_modules/react-native-code-push/android/codepush.gradle"
 
+
+project.ext.vectoricons = [
+    iconFontNames: [ 'MaterialIcons.ttf', 'EvilIcons.ttf', 'Feather.ttf', 'AntDesign.ttf', 'Ionicons.ttf', 'Entypo.ttf' ] // Name of the font files you want to copy
+]
+apply from: "../../node_modules/react-native-vector-icons/fonts.gradle"
 /**
  * This is the configuration block to customize your React Native Android app.
  * By default you don't need to apply any configuration, just uncomment the lines you need.
@@ -107,6 +114,10 @@ android {
 dependencies {
     // The version of react-native is set by the React Native Gradle Plugin
     implementation("com.facebook.react:react-android")
+    implementation(platform("com.google.firebase:firebase-bom:33.1.1"))
+    implementation("com.google.firebase:firebase-crashlytics")
+    implementation("com.google.firebase:firebase-analytics")
+    implementation "androidx.browser:browser:1.2.0"
 
     if (hermesEnabled.toBoolean()) {
         implementation("com.facebook.react:hermes-android")

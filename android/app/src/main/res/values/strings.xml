@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">lendsqr</string>
+    <string moduleConfig="true" name="CodePushDeploymentKey">_sHKEwek4KuyBC65az_hnRTtCX8NVqjdGntTs</string>
+    <string name="com.crashlytics.android.build_id">none</string>
 </resources>

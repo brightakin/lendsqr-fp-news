@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "201434789590",
+    "project_id": "lendsqr-fp-news-67955",
+    "storage_bucket": "lendsqr-fp-news-67955.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:201434789590:android:ed11dc4540845ff9b0fb77",
+        "android_client_info": {
+          "package_name": "com.lendsqr"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "201434789590-bvbflpt6hqdor6veog5quo9j3v2145rk.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.lendsqr",
+            "certificate_hash": "abe5d7b230aeb0039723093de7192548f05b9d3e"
+          }
+        },
+        {
+          "client_id": "201434789590-cskn6240sjmv6t6mm6ptvf3b0fteu1g7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAapbhA7JnBar0FAASLndeBPs_Foii2o1c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "201434789590-cskn6240sjmv6t6mm6ptvf3b0fteu1g7.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "201434789590-gkosnbsesr7a5odng83vtdo8snre9gc7.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.lendsqr"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
