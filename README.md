@@ -1,79 +1,112 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+Created the GitHub Repository
 
-# Getting Started
 
-> **Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
+Repository Creation: Created a GitHub repository named lendsqr-fp-news.
+Clone Repository: Cloned the repository to my local machine.
+Initialize React Native Project:
+Open terminal
+Copy code
+npx react-native init lendsqr --template react-native-template-typescript
+Install the required dependencies:
 
-## Step 1: Start the Metro Server
 
-First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
+npm install @react-navigation/native @react-navigation/stack @react-navigation/bottom-tabs redux react-redux @reduxjs/toolkit axios firebase react-native-firebase/app react-native-firebase/auth react-native-firebase/crashlytics react-native-firebase/perf react-native-firebase/remote-config react-native-firebase/messaging react-native-code-push
 
-To start Metro, run the following command from the _root_ of your React Native project:
 
-```bash
-# using npm
-npm start
+Created Firebase Project: Create a Firebase project named lendsqr-fp-news.
 
-# OR using Yarn
-yarn start
-```
+Add Firebase to Project:
 
-## Step 2: Start your Application
+Downloaded the google-services.json file and place it in the android/app directory.
+Downloaded the GoogleService-Info.plist file and add it to the iOS project in Xcode.
+Added dependencies to the native applications(android and ios)
+Firebase Services Setup:
 
-Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start your _Android_ or _iOS_ app:
+Enabled Authentication with Google Sign-In.
+Enabled Crashlytics.
+Enabled Performance Monitoring.
+Enabled Remote Config.
+Enabled Cloud Messaging.
+API Integration
 
-### For Android
+RapidAPI - Free News API was asking for a subscription so I opted for a free substitute
+Sign Up: Sign up for an account on the new api platform.
+Fetch News Data:
+Used Axios to retrieve news data from the API.
+Example:
 
-```bash
-# using npm
-npm run android
+axios.request(options).then(response => {
+  console.log(response.data);
+}).catch(error => {
+  console.error(error);
+});
+Application Structure
 
-# OR using Yarn
-yarn android
-```
+Redux Setup
+State Management: Used Redux Toolkit for managing application state.
 
-### For iOS
+Features Implementation
 
-```bash
-# using npm
-npm run ios
+User Authentication
+Sign Up and Login Screens:
+Used Firebase Authentication for Google Sign-In on the second screen.
+Protect News Routes: Ensured news listing and details can only be accessed by authenticated users.
+News Listing and Details Screens
+News Listing:
+Fetch news articles from the Free News API.
+Display title, image, topic, and publication date.
+News Details:
+Navigate to details screen on item tap.
+Display full news details including summary and author.
+Created a Middleware for analytics
+User Activities Logging:
+Created middleware to log user activities and screen changes.
+Used Firebase Analytics to log events.
 
-# OR using Yarn
-yarn ios
-```
+Over-the-Air Updates with CodePush
 
-If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ or _iOS Simulator_ shortly provided you have set up your emulator/simulator correctly.
+Set Up CodePush:
 
-This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
+Integrated with React Native:
+javascript
+Copy code
+import codePush from 'react-native-code-push';
 
-## Step 3: Modifying your App
+let codePushOptions = { checkFrequency: codePush.CheckFrequency.ON_APP_START };
 
-Now that you have successfully run the app, let's modify it.
+class App extends Component {
+  render() {
+    // App content
+  }
+}
 
-1. Open `App.tsx` in your text editor of choice and edit some lines.
-2. For **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Developer Menu** (<kbd>Ctrl</kbd> + <kbd>M</kbd> (on Window and Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (on macOS)) to see your changes!
+App = codePush(codePushOptions)(App);
+Testing and Error Handling
 
-   For **iOS**: Hit <kbd>Cmd ⌘</kbd> + <kbd>R</kbd> in your iOS Simulator to reload the app and see your changes!
+Unit Tests:
 
-## Congratulations! :tada:
+Wrote unit tests using Jest.
+Example test:
+javascript
+Copy code
+import { render } from '@testing-library/react-native';
+import NewsList from './NewsList';
 
-You've successfully run and modified your React Native App. :partying_face:
+test('renders correctly', () => {
+  const { getByText } = render(<NewsList />);
+  expect(getByText('News')).toBeTruthy();
+});
+Runtime Error Handling:
 
-### Now what?
+Add a button on the news listing screen that throws a runtime error when pressed.
+javascript
+Copy code
+<Button title="Throw Error" onPress={() => { throw new Error('Test Error'); }} />
+Deployment
 
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
+Deploy with Firebase App Tester:
 
-# Troubleshooting
+Follow the Firebase App Distribution documentation to deploy your app.
+Submit URLs:
 
-If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+Submit the app URL and GitHub repository URL using the provided submission form.
