@@ -1,5 +1,4 @@
-Created the GitHub Repository
-
+## Setup
 
 Created a GitHub repository named lendsqr-fp-news.
 
@@ -31,12 +30,12 @@ Sign Up: Sign up for an account on the new api platform.
 Fetch News Data:
 Used Axios to retrieve news data from the API.
 
-Application Structure
+## Application Structure
 
 Redux Setup
 State Management: Used Redux Toolkit for managing application state.
 
-Features Implementation
+## Features Implementation
 
 User Authentication
 Sign Up and Login Screens:
@@ -58,7 +57,7 @@ Over-the-Air Updates with CodePush
 
 Set Up CodePush
 
-Unit Tests:
+## Unit Tests
 
 Wrote unit tests using Jest.
 
