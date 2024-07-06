@@ -7,12 +7,30 @@ import LoginScreen from '../Login'; // Adjust the path
 
 const middlewares = [thunk];
 const mockStore = configureStore(middlewares);
+interface State {}
 
+const initialState: State = {};
 const mockNavigation = {
   navigate: jest.fn(),
   goBack: jest.fn(),
   state: {params: {}},
 };
+
+jest.mock('@react-native-google-signin/google-signin', () => ({
+  GoogleSignin: {
+    configure: jest.fn(),
+    hasPlayServices: jest.fn().mockResolvedValue(true),
+    signIn: jest.fn().mockResolvedValue({
+      user: {
+        email: 'test@example.com',
+        id: '123',
+        name: 'Test User',
+      },
+    }),
+  },
+}));
+
+jest.mock('@react-native-firebase/analytics', () => ({}));
 
 const renderComponent = (state = initialState) => {
   const store = mockStore(state);
@@ -25,10 +43,7 @@ const renderComponent = (state = initialState) => {
 
 describe('LoginScreen', () => {
   test('renders login screen correctly', () => {
-    const {getByPlaceholderText, getByText} = renderComponent();
-
-    expect(getByPlaceholderText('Email')).toBeTruthy();
-    expect(getByPlaceholderText('Password')).toBeTruthy();
+    const {getByText} = renderComponent();
     expect(getByText('Login')).toBeTruthy();
   });
 
@@ -43,10 +58,8 @@ describe('LoginScreen', () => {
 
   test('handles Google login button press', () => {
     const {getByText} = renderComponent();
-    const googleLoginButton = getByText('Sign in with Google');
+    const googleLoginButton = getByText('Sign In with Google');
 
     fireEvent.press(googleLoginButton);
-
-    // Add your assertions here to check if the Google login action was dispatched
   });
 });

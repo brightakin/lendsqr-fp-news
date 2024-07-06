@@ -9,19 +9,10 @@ import {SafeAreaView} from 'react-native-safe-area-context';
 import KeyboardAvoidingView from '../../components/shared/KeyboardAvoidingView';
 import {heightPercentageToDP} from 'react-native-responsive-screen';
 import {CUSTOMFONT_REGULAR} from '../../constants/fonts';
-import CustomInput from '../../components/CustomInput';
-import {SignupSchema} from '../../schemas';
 import {useTheme} from '@react-navigation/native';
-import {useState} from 'react';
-import {useToggleVisibility} from '../../hooks/passwordVisibility';
-import Button from '../../components/shared/Button';
-import {Formik} from 'formik';
-import {LOGIN, NEWSLISTING, OAUTH} from '../../navigation/routes';
+import {LOGIN} from '../../navigation/routes';
 import {GoogleSvg} from '../../../assets/SVGs';
-import {
-  GoogleSignin,
-  GoogleSigninButton,
-} from '@react-native-google-signin/google-signin';
+import {GoogleSignin} from '@react-native-google-signin/google-signin';
 import {useAppDispatch} from '../../hooks/reduxHooks';
 import {loginUserSuccess} from '../../redux/slices/auth';
 import analyticsMiddleware from '../../helpers/analytics';
@@ -30,11 +21,7 @@ import React from 'react';
 
 const OauthScreen = ({navigation}: any): JSX.Element => {
   const dispatch = useAppDispatch();
-  const {colors, dark}: any = useTheme();
-  const [isEnabled, setIsEnabled] = useState(false);
-  const toggleSwitch = () => setIsEnabled(previousState => !previousState);
-  const {isPasswordVisible, Icon, togglePasswordVisibility} =
-    useToggleVisibility();
+  const {colors}: any = useTheme();
 
   const signIn = async () => {
     GoogleSignin.configure();

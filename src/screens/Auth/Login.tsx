@@ -6,22 +6,13 @@ import {
   View,
 } from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
-import KeyboardAvoidingView from '../../components/shared/KeyboardAvoidingView';
 import {heightPercentageToDP} from 'react-native-responsive-screen';
 import {CUSTOMFONT_REGULAR} from '../../constants/fonts';
-import CustomInput from '../../components/CustomInput';
-import {SignupSchema} from '../../schemas';
 import {useTheme} from '@react-navigation/native';
 import {useState} from 'react';
-import {useToggleVisibility} from '../../hooks/passwordVisibility';
-import Button from '../../components/shared/Button';
-import {Formik} from 'formik';
-import {NEWSLISTING, OAUTH, SIGNUP} from '../../navigation/routes';
+import {SIGNUP} from '../../navigation/routes';
 import {GoogleSvg} from '../../../assets/SVGs';
-import {
-  GoogleSignin,
-  GoogleSigninButton,
-} from '@react-native-google-signin/google-signin';
+import {GoogleSignin} from '@react-native-google-signin/google-signin';
 import {loginUserSuccess} from '../../redux/slices/auth';
 import {useAppDispatch} from '../../hooks/reduxHooks';
 import analyticsMiddleware from '../../helpers/analytics';
@@ -41,7 +32,7 @@ const LoginScreen = ({navigation}: any): JSX.Element => {
       const userInfo = await GoogleSignin.signIn();
       if (userInfo) {
         dispatch(loginUserSuccess(userInfo));
-        analyticsMiddleware.logEvent('Login', {payload: 'Successful'});
+        //analyticsMiddleware.logEvent('Login', {payload: 'Successful'});
       }
     } catch (error) {
       console.log(error);

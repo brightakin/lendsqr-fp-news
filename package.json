@@ -97,7 +97,7 @@
       "node_modules/(?!@react-native|react-native)"
     ],
     "setupFiles": [
-      "./node_modules/@react-native-google-signin/google-signin"
+      "<rootDir>/setup-jest.js"
     ],
     "moduleFileExtensions": [
       "ts",

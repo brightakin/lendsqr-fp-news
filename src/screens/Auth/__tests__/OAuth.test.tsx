@@ -21,6 +21,8 @@ jest.mock('@react-native-google-signin/google-signin', () => ({
   },
 }));
 
+jest.mock('@react-native-firebase/analytics', () => ({}));
+
 const middlewares = [thunk];
 const mockStore = configureStore(middlewares);
 
