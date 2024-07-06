@@ -1,17 +1,13 @@
-Created the GitHub Repository
+## Setup
 
+Created a GitHub repository named lendsqr-fp-news.
 
-Repository Creation: Created a GitHub repository named lendsqr-fp-news.
-Clone Repository: Cloned the repository to my local machine.
-Initialize React Native Project:
-Open terminal
-Copy code
-npx react-native init lendsqr --template react-native-template-typescript
-Install the required dependencies:
+Cloned the repository to my local machine.
 
+Initialize React Native Project with the following command: npx react-native init lendsqr --template react-native-template-typescript
 
+Install the required dependencies with the following command:
 npm install @react-navigation/native @react-navigation/stack @react-navigation/bottom-tabs redux react-redux @reduxjs/toolkit axios firebase react-native-firebase/app react-native-firebase/auth react-native-firebase/crashlytics react-native-firebase/perf react-native-firebase/remote-config react-native-firebase/messaging react-native-code-push
-
 
 Created Firebase Project: Create a Firebase project named lendsqr-fp-news.
 
@@ -33,19 +29,13 @@ RapidAPI - Free News API was asking for a subscription so I opted for a free sub
 Sign Up: Sign up for an account on the new api platform.
 Fetch News Data:
 Used Axios to retrieve news data from the API.
-Example:
 
-axios.request(options).then(response => {
-  console.log(response.data);
-}).catch(error => {
-  console.error(error);
-});
-Application Structure
+## Application Structure
 
 Redux Setup
 State Management: Used Redux Toolkit for managing application state.
 
-Features Implementation
+## Features Implementation
 
 User Authentication
 Sign Up and Login Screens:
@@ -65,48 +55,12 @@ Used Firebase Analytics to log events.
 
 Over-the-Air Updates with CodePush
 
-Set Up CodePush:
+Set Up CodePush
 
-Integrated with React Native:
-javascript
-Copy code
-import codePush from 'react-native-code-push';
-
-let codePushOptions = { checkFrequency: codePush.CheckFrequency.ON_APP_START };
-
-class App extends Component {
-  render() {
-    // App content
-  }
-}
-
-App = codePush(codePushOptions)(App);
-Testing and Error Handling
-
-Unit Tests:
+## Unit Tests
 
 Wrote unit tests using Jest.
-Example test:
-javascript
-Copy code
-import { render } from '@testing-library/react-native';
-import NewsList from './NewsList';
-
-test('renders correctly', () => {
-  const { getByText } = render(<NewsList />);
-  expect(getByText('News')).toBeTruthy();
-});
-Runtime Error Handling:
 
 Add a button on the news listing screen that throws a runtime error when pressed.
-javascript
-Copy code
-<Button title="Throw Error" onPress={() => { throw new Error('Test Error'); }} />
-Deployment
 
-Deploy with Firebase App Tester:
-
-Follow the Firebase App Distribution documentation to deploy your app.
-Submit URLs:
-
-Submit the app URL and GitHub repository URL using the provided submission form.
+Deployed the application with Firebase App Tester
