@@ -57,10 +57,4 @@ Over-the-Air Updates with CodePush
 
 Set Up CodePush
 
-## Unit Tests
-
-Wrote unit tests using Jest.
-
-Add a button on the news listing screen that throws a runtime error when pressed.
-
 Deployed the application with Firebase App Tester
