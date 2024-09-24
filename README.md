@@ -35,26 +35,6 @@ Used Axios to retrieve news data from the API.
 Redux Setup
 State Management: Used Redux Toolkit for managing application state.
 
-## Features Implementation
-
-User Authentication
-Sign Up and Login Screens:
-Used Firebase Authentication for Google Sign-In on the second screen.
-Protect News Routes: Ensured news listing and details can only be accessed by authenticated users.
-News Listing and Details Screens
-News Listing:
-Fetch news articles from the Free News API.
-Display title, image, topic, and publication date.
-News Details:
-Navigate to details screen on item tap.
-Display full news details including summary and author.
-Created a Middleware for analytics
-User Activities Logging:
-Created middleware to log user activities and screen changes.
-Used Firebase Analytics to log events.
-
-Over-the-Air Updates with CodePush
-
 Set Up CodePush
 
 Deployed the application with Firebase App Tester
